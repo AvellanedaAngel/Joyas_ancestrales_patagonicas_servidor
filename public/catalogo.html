@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo — Biblioteca Virtual de Joyería Ancestral Patagónica</title>
+  <meta name="description" content="Listado de piezas de joyería ancestral patagónica.">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header id="encabezado"></header>
+
+  <main id="contenido-principal" tabindex="-1">
+    <h1>Catálogo</h1>
+    <p id="catalogo-estado" class="catalogo-estado" role="status">Cargando piezas…</p>
+    <ul id="catalogo-cuadro" class="catalogo-cuadro" aria-label="Piezas del catálogo"></ul>
+    <nav class="paginacion" aria-label="Paginación del catálogo">
+      <button type="button" class="btn" id="pagina-anterior" disabled>Anterior</button>
+      <span id="pagina-indicador"></span>
+      <button type="button" class="btn" id="pagina-siguiente" disabled>Siguiente</button>
+    </nav>
+  </main>
+
+  <footer id="contacto"></footer>
+  <script src="js/utilidades.js"></script>
+  <script src="js/componentes.js"></script>
+  <script src="js/catalogo.js"></script>
+</body>
+</html>

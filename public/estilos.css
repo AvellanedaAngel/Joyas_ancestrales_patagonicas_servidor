@@ -1,0 +1,230 @@
+/* Biblioteca Virtual de Joyería Ancestral Patagónica */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root { 
+    --bg: #efe6d2; 
+    --panel: #f8f2e3; 
+    --ink: #2b2216; 
+    --soft: #6b5c46; 
+    --line: #c8b78d; 
+    --clay: #a35c3a; 
+    --clay-dark: #83452a; 
+    --sage: #5f6b40; 
+    --plata: #9aa3a6; 
+}
+*, *::before, *::after { 
+    box-sizing: border-box; 
+}
+body { 
+    margin: 0; 
+    font-family: "Work Sans", Arial, sans-serif; line-height: 1.55; color: var(--ink); background: var(--bg); }
+img { 
+    display: block; 
+    max-width: 100%; 
+}
+h1, h2 { 
+    margin: 0 0 .5em; 
+    font-family: "Fraunces", serif; 
+    font-weight: 500; 
+    line-height: 1.3; 
+}
+a { 
+    color: inherit; 
+}
+:focus-visible { 
+    outline: 2px solid var(--clay-dark); 
+    outline-offset: 3px; 
+}
+
+/* Marco de la página: encabezado, contenido y pie */
+body > header, main, footer { 
+    max-width: 1180px; 
+    margin: 0 auto; 
+    background: var(--panel); 
+    border: solid var(--line); 
+    border-width: 0 1px; 
+}
+body > header { 
+    display: flex; 
+    flex-wrap: wrap; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 12px 28px; 
+    padding: 18px 40px; 
+    border-width: 1px 1px 2px; 
+    border-bottom-color: var(--plata); 
+    border-radius: 10px 10px 0 0; 
+}
+main { 
+    padding: 44px 40px 56px; 
+}
+main:focus { 
+    outline: none; 
+}
+footer { 
+    padding: 22px 40px; 
+    border-width: 0 1px 1px; 
+    border-radius: 0 0 10px 10px; 
+}
+.titulo { 
+    font: 600 1.7rem "Fraunces", serif; 
+}
+.sub, .copy { 
+    font-size: .8rem; color: var(--soft); 
+}
+.copy { 
+    margin: 0; 
+}
+nav { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 8px 28px; 
+}
+nav a { 
+    padding-bottom: 3px; 
+    font-size: .92rem; 
+    font-weight: 500; 
+    color: var(--soft); 
+    text-decoration: none; 
+    border-bottom: 1px solid transparent; 
+}
+nav a:hover, nav a[aria-current="page"] { 
+    color: var(--clay-dark); 
+    border-bottom-color: var(--clay-dark); 
+}
+.saltar-contenido { 
+    position: absolute; 
+    left: 12px; 
+    top: -60px; 
+    padding: 10px 16px; 
+    color: var(--panel); 
+    background: var(--ink); 
+}
+.saltar-contenido:focus { 
+    top: 12px; 
+}
+
+/* Inicio */
+main p { 
+    max-width: 68ch; color: var(--soft); 
+}
+main section + section { 
+    margin-top: 44px; 
+    padding-top: 44px; 
+    border-top: 1px solid var(--line); 
+}
+.slogan { 
+    max-width: 22ch; 
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem); 
+    font-style: italic; 
+    color: var(--sage); 
+}
+.btn { 
+    display: inline-block; 
+    padding: 12px 20px; 
+    font: 600 .86rem "Work Sans", sans-serif; 
+    color: var(--panel); 
+    text-decoration: none; 
+    background: var(--clay); 
+    border: 1px solid var(--clay); 
+    border-radius: 3px; 
+    cursor: pointer; 
+}
+.btn:hover:not(:disabled), .btn:focus-visible { 
+    background: var(--clay-dark); 
+    border-color: var(--clay-dark); 
+}
+.btn:disabled { 
+    opacity: .45; 
+    cursor: not-allowed; 
+}
+
+/* Catálogo */
+.catalogo-estado { 
+    min-height: 1.4em; 
+    margin: 0 0 14px; 
+    font-size: .85rem; 
+}
+.catalogo-cuadro { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); 
+    gap: 18px; 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+}
+.catalogo-cuadro li { 
+    overflow: hidden; 
+    border: 1px solid var(--line); 
+    border-radius: 3px; 
+}
+.catalogo-cuadro li:hover, .catalogo-cuadro li:focus-within { 
+    border-color: var(--soft); 
+}
+.catalogo-cuadro a { 
+    display: block; 
+    text-decoration: none; 
+}
+.catalogo-cuadro img {
+    width: 100%; 
+    aspect-ratio: 4 / 3; 
+    object-fit: cover; 
+}
+.catalogo-cuadro h2 { 
+    margin: 14px 14px 4px; 
+    font-size: 1rem; 
+}
+.catalogo-cuadro p { 
+    margin: 0 14px 14px; 
+    font-size: .82rem; 
+}
+.paginacion { 
+    justify-content: center; 
+    align-items: center; 
+    gap: 18px; 
+    margin-top: 28px; 
+    font-size: .85rem; 
+    color: var(--soft); 
+}
+
+/* Detalle de una pieza */
+.ficha { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0 40px; 
+    align-items: start; 
+}
+.ficha h1 { 
+    grid-column: 1 / -1; 
+    font-size: clamp(1.6rem, 3vw, 2.2rem); 
+}
+.ficha figure { 
+    margin: 0; 
+}
+.ficha img { 
+    width: 100%; 
+    aspect-ratio: 4 / 3; 
+    object-fit: cover; 
+    padding: 10px; 
+    background: var(--bg); 
+    border: 1px solid var(--line); 
+}
+.ficha h2 { 
+    font-size: 1.1rem; 
+}
+dl { 
+    display: grid; 
+    grid-template-columns: 9rem 1fr; 
+    gap: 8px 12px; 
+    margin: 0 0 28px; 
+}
+dt { 
+    font-size: .85rem; 
+    color: var(--soft);
+ }
+dd { 
+    margin: 0; 
+}
+.mensaje-error { 
+    color: var(--clay-dark); 
+}
